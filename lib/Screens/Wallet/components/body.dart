@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_toastr/flutter_toastr.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:http/http.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
@@ -29,7 +28,6 @@ retnull() {
 }
 
 class _Body extends State<Body> {
-  static const platform = const MethodChannel("razorpay_flutter");
   Razorpay _razorpay;
   String bal;
   String addmoney, name, contactNo, Email, userCd;
@@ -264,7 +262,7 @@ class _Body extends State<Body> {
                             SizedBox(
                                 width:
                                     MediaQuery.of(context).size.width * 0.01),
-                            FlatButton(
+                            MaterialButton(
                                 color: kPrimaryColor,
                                 child: Text(
                                   "Add",
@@ -279,7 +277,7 @@ class _Body extends State<Body> {
                                   }
                                 }),
                             SizedBox(width: 5),
-                            FlatButton(
+                            MaterialButton(
                                 color: kPrimaryColor,
                                 child: Text("Withdraw",
                                     style: TextStyle(color: Colors.white)),
@@ -566,7 +564,7 @@ Future<void> _displayTextInputDialog(
             ),
           ),
           actions: <Widget>[
-            FlatButton(
+            MaterialButton(
               color: Colors.green,
               textColor: Colors.white,
               child: Text('OK'),
